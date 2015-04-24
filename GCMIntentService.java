@@ -18,8 +18,8 @@ public class GcmIntentService extends IntentService {
     public static int NOTIFICATION_ID = 1;
     public static int contador = 1;
     public static String contadormateria = "";
-    public static int contadormatematica = 1;
-    public static int contadorestat = 1;
+    public static int contadormatematica = 0;
+    public static int contadorestat = 0;
     public static String mensagemsub = "";
 
 
@@ -93,20 +93,20 @@ public class GcmIntentService extends IntentService {
             mensagem=" novas mensagens";
         }
         //if(group == "Matemática"){
-           // contadormateria="Matemática";
-            //contadormatematica++;
+            //contadormateria="Matemática";
+           // contadormatematica++;
         //} else if (group=="Estatística"){
-            //contadormateria="Estatística";
-            //contadormatematica++;
-        //}
-        //if(contadormatematica==1){
-            //mensagemsub="Matemática mandou uma nova mensagem";
-        //} else if(contadorestat==1){
-            //mensagemsub="Estatística mandou uma nova mensagem";
-        //} else if(contadorestat==1&&contadormatematica==1){
-            //mensagemsub="Estatística e Matemática mandaram uma nova mensagem";
-        //} else {
-            //mensagemsub="Estatística e Matemática mandaram novas mensagens";
+          //  contadormateria="Estatística";
+          //  contadormatematica++;
+       // }
+       // if(contadormatematica==1){
+       //     mensagemsub="Matemática mandou uma nova mensagem";
+       // } else if(contadorestat==1){
+       //     mensagemsub="Estatística mandou uma nova mensagem";
+       // } else if(contadorestat==1&&contadormatematica==1){
+          //  mensagemsub="Estatística e Matemática mandaram uma nova mensagem";
+       // } else {
+        //    mensagemsub="Estatística e Matemática mandaram uma novas mensagens";
         //}
 
 
@@ -129,7 +129,7 @@ public class GcmIntentService extends IntentService {
                                 .bigText(notice))
                         .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                         .setVibrate(new long[] { 0, 100, 200, 300 })
-                        .setSubText(group+" mandou"+contador+mensagem)
+                        .setSubText(group+ " mandou " +contador +mensagem)
                         .setContentText(group);
 
         mBuilder.setContentIntent(contentIntent);
